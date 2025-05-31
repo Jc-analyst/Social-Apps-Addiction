@@ -9,14 +9,10 @@ This project investigates the impact of excessive social media use on mental hea
 - **Data cleaning** included handling duplicates, missing values, and correcting wrong entries.
 
 ## 🏗️ Project Structure
-📂 social-media-impact/ 
-├── 📄 README.md  # Project documentation 
-├── 📄 dataset.csv  # Raw data source 
-├── 📂 sql_queries/ # Folder for SQL scripts │ 
-  ├── cleaning.sql  # Data cleaning queries │ 
-  ├── analysis.sql  # Correlation studies 
-├── 📂 results/ # Processed outputs and reports
-
+📂 Social-Apps-Addiction/ 
+├── 📄 README.md  # Project documentation / # Data cleaning queries / # Correlation queries / # Conclusion
+├── 📄 Students Social Media Addiction.csv  # Raw data source 
+├── 📄 social_test.sql/ # Processed outputs
 
 ## 🧹 Data Cleaning Steps
 
