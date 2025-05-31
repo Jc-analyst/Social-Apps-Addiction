@@ -37,7 +37,7 @@ FROM s_a
 GROUP BY Student_ID
 HAVING COUNT(*) > 1;
 ```
-### No duplicates, (not using having as its for agreagete fucntions)
+No duplicates, (not using having as its for agreagete fucntions)
 
 
 ## 2 How many distinc different values per Column
@@ -52,7 +52,7 @@ SELECT
     COUNT(DISTINCT Relationship_Status) AS unique_R_s
 FROM s_a;
 ```
-### Distinc values are ok 
+Distinc values are ok 
 
 
 ## 3 Checking for Missing Data (NULLs)
@@ -74,7 +74,8 @@ Student_ID IS NULL OR Student_ID = ''
    OR Conflicts_Over_Social_Media IS NULL OR Conflicts_Over_Social_Media = ''
    ;
 ```
-   ### OR 
+OR 
+
 ```sql
 SELECT * 
 FROM s_a 
@@ -83,7 +84,7 @@ WHERE COALESCE(Student_ID, Age, Gender, Academic_Level, Country,
                Sleep_Hours_Per_Night, Mental_Health_Score, Relationship_Status, 
                Conflicts_Over_Social_Media) = NULL or ' ';
 ```
-### There is non NULL or empty value
+There is non NULL or empty value
 
 ## 4 checking for missing data per columns
 ```sql
@@ -103,7 +104,7 @@ SELECT
     SUM(CASE WHEN Addicted_Score IS NULL THEN 1 ELSE 0 END) AS missing_Addicted_Score
 FROM s_a;
 ```
-###There is non any null value
+There is non any null value
 
 ## 5 checking for wrong data (age)
 ```sql
@@ -111,9 +112,9 @@ SELECT Age
 FROM s_a
 WHERE Age < 0;
 ```
-### Age data looks good, 
+Age data looks good, 
     
-### Data is checked and prepare to be analized 
+Data is checked and prepare to be analized 
 
 # RUN SUMMARY QUERIES
 
@@ -139,7 +140,7 @@ SELECT
     SUM(CASE WHEN Gender NOT IN ('Male', 'Female') THEN 1 ELSE 0 END) AS total_other_genders
 FROM s_a;
 ```
-## There is 352 Males and 353 Females
+There is 352 Males and 353 Females
 
 ```sql
 SELECT Country, COUNT(*) AS total_students
@@ -147,25 +148,25 @@ FROM s_a
 GROUP BY Country
 ORDER BY total_students DESC;
 ```
-## It can be seen that the data is taking more from North America, Europeans countries and India
+It can be seen that the data is taking more from North America, Europeans countries and India
 ```sql
 SELECT Most_Used_Platform, COUNT(*) AS total_s_a
 FROM s_a
 GROUP BY Most_Used_Platform
 ORDER BY total_s_a DESC;
 ```
-## The most popular Social media apps are Instagram, TikTok and Facebook
+The most popular Social media apps are Instagram, TikTok and Facebook
         
 
 ## 📊 Correlation Analysis
 
-  ### 1. Correlation daily usage vs mental health 
+## 1. Correlation daily usage vs mental health 
   ```sql
 SELECT Avg_Daily_Usage_Hours, Mental_Health_Score
 FROM s_a
 ORDER BY Mental_Health_Score DESC;
   ```
-   There is a some evidene of the negative correlation but we need to prove it. 
+There is a some evidene of the negative correlation but we need to prove it. 
   ```sql
 SELECT 
     (SUM(Avg_Daily_Usage_Hours * Mental_Health_Score) - 
@@ -177,15 +178,15 @@ SELECT
     )) AS correlation_coefficient
 FROM s_a;
   ```
-   #### The correlation coef is -0.8, which indicate a strong negative correlation, higher daily use lower the mental health score, but it doesnt mean causation
-----
-   ### 2. Correlation daily usage vs sleep
+The correlation coef is -0.8, which indicate a strong negative correlation, higher daily use lower the mental health score, but it doesnt mean causation
+
+## 2. Correlation daily usage vs sleep
    ```sql
 SELECT Avg_Daily_Usage_Hours, Sleep_Hours_Per_Night
 FROM s_a
 ORDER BY Sleep_Hours_Per_Night DESC;
   ```  
- There seems to be a negative correlation so we prove it
+There seems to be a negative correlation so we prove it
   ```sql
 SELECT 
     (SUM(Avg_Daily_Usage_Hours * Sleep_Hours_Per_Night) - 
@@ -197,7 +198,7 @@ SELECT
     )) AS correlation_coefficient
 FROM s_a;
   ```  
-  #### There is a clearly negative correlation of -0.7, Found strong negative correlation between social media usage and mental health. Discovered link between excessive app time and sleep deprivation.
+There is a clearly negative correlation of -0.7, Found strong negative correlation between social media usage and mental health. Discovered link between excessive app time and sleep deprivation.
 
 ## 📝 Conclusion
 This analysis highlights the risks of social media addiction, showing measurable declines in mental well-being and sleep quality as usage increases.
