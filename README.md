@@ -16,14 +16,14 @@ This project investigates the impact of excessive social media use on mental hea
 
 ## 🧹 Data Cleaning Steps
 
-# UNDERSTANDING THE DATASET
+## Understanding the Dataset 
 ```sql
 SHOW TABLES;
 Describe s_a;
 SELECT * FROM s_a;
 ```
 
-# QUALITY CHECKS 
+## Quality Checks  
 ## 1 Checking for duplicates
 ```sql
 SELECT 
@@ -112,7 +112,7 @@ Age data looks good,
     
 Data is checked and prepare to be analized 
 
-# RUN SUMMARY QUERIES
+# Run Summary Queries 
 
 ```sql
 SELECT * FROM s_a;
