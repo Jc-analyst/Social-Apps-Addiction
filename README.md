@@ -41,7 +41,7 @@ This project investigates the impact of excessive social media use on mental hea
 
 - Correlation daily usage vs mental health 
 
-- Correlation daily usage vs sleep
+- Correlation daily usage vs sleep quality
 
 ## 📝 Conclusion
 This analysis highlights the risks of social media addiction, showing measurable declines in mental well-being and sleep quality as usage increases.
