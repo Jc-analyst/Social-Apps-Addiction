@@ -10,27 +10,38 @@ This project investigates the impact of excessive social media use on mental hea
 
 ## 🏗️ Project Structure
 📂 Social-Apps-Addiction/ 
+
 ├── 📄 README.md  # Project documentation / # Summary
+
 ├── 📄 Students Social Media Addiction.csv  # Raw data source 
+
 ├── 📄 Syntax-Data Cleaning and Correlation.sql / # Cleaning queries / # Correlation queries / # Conclusion
+
 ├── 📄 Data_Cleaned.sql/ # Processed outputs
 
 ## 🧹 Data Cleaning Steps
 
 ### Understanding the Dataset 
-#### A Quality Checks  
--1 Checking for duplicates
--2 How many distinc different values per Column
--3 Checking for Missing Data (NULLs)
--4 checking for missing data per columns
--5 checking for wrong data (age)
+
+#### A Quality Checks 
+
+- Checking for duplicates
+
+- How many distinct different values per Column
+
+- Checking for Missing Data (NULLs)
+
+- Checking for missing data per columns
+
+- Checking for wrong data (age)
 
 ####  B Run Summary Queries 
 
 ## 📊 Correlation Analysis
 
--Correlation daily usage vs mental health 
--Correlation daily usage vs sleep
+- Correlation daily usage vs mental health 
+
+- Correlation daily usage vs sleep
 
 ## 📝 Conclusion
 This analysis highlights the risks of social media addiction, showing measurable declines in mental well-being and sleep quality as usage increases.
